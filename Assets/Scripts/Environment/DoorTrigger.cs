@@ -21,7 +21,7 @@ public class DoorTrigger : MonoBehaviour
         Rigidbody rigidbody = other.GetComponent<Rigidbody>();
         if (rigidbody && (weightThreshold <= rigidbody.mass))
         {
-            _doorController.open = true;
+            _doorController.numberOfTriggersActivated = _doorController.numberOfTriggersActivated + 1;
         }
     }
 
@@ -30,7 +30,7 @@ public class DoorTrigger : MonoBehaviour
         Rigidbody rigidbody = other.GetComponent<Rigidbody>();
         if (rigidbody && !_oneTimePress)
         {
-            _doorController.open = false;
+            _doorController.numberOfTriggersActivated = _doorController.numberOfTriggersActivated - 1;
         }
     }
 }
