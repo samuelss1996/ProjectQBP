@@ -8,6 +8,7 @@ public class ThirdPersonCamera : MonoBehaviour
     private float _tempDistance = 5.0f;
     private Vector3 _nonCollidingPosition;
     private bool _hitting = false;
+    private Rigidbody _rigidbody = null;
 
     public Transform target;
     public float distance = 5.0f;
@@ -30,12 +31,11 @@ public class ThirdPersonCamera : MonoBehaviour
         y = angles.x;
         _tempDistance = distance;
         _nonCollidingPosition = transform.position;
-        Rigidbody rigidbody = GetComponent<Rigidbody>();
-
-        // Make the rigid body not change rotation
-        if (rigidbody != null)
+        _rigidbody = GetComponent<Rigidbody>();
+        
+        if (_rigidbody)
         {
-            rigidbody.freezeRotation = true;
+            _rigidbody.freezeRotation = true;
         }
         _cameraSelector = FindObjectOfType<CameraSelector>();
     }
@@ -44,7 +44,6 @@ public class ThirdPersonCamera : MonoBehaviour
     {
         if (target && !_cameraSelector.isScreenSelectorEnabled)
         {
-
             x += Input.GetAxis("Mouse X") * xSpeed * _tempDistance * 0.02f;
             y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
 

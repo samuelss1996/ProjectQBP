@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private CameraSelector _cameraSelector;
     private Vector3 _input;
     private Rigidbody _rigidbody;
+    private ThirdPersonCamera _camera;
 
     void Start()
     {
@@ -19,7 +20,19 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if (!_cameraSelector.isScreenSelectorEnabled)
+        if (!_camera)
+        {
+            ThirdPersonCamera[] cameras = FindObjectsOfType<ThirdPersonCamera>();
+            foreach (ThirdPersonCamera camera in cameras)
+            {
+                if (camera.target == gameObject.transform)
+                {
+                    _camera = camera;
+                    break;
+                }
+            }
+        }
+        if (!_cameraSelector.isScreenSelectorEnabled && _camera && _camera.gameObject.activeInHierarchy)
         {
             _input = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
         }
