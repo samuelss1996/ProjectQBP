@@ -19,8 +19,8 @@ public class MaterialOffsetAnimator : MonoBehaviour
     {
         if (material != null)
         {
-            //material.SetTextureOffset("_EmissionMap", material.GetTextureOffset("_EmissionMap") + new Vector2(0, offsetChangePerSecond * Time.deltaTime));
-            Debug.Log("It is " + material.GetTextureOffset("_EmissionMap"));
+            material.SetTextureOffset("_MainTex", material.GetTextureOffset("_MainTex") + new Vector2(0, offsetChangePerSecond * Time.deltaTime));
+            //Debug.Log("It is " + material.GetTextureOffset("_MainTex"));
         }
     }
 }
