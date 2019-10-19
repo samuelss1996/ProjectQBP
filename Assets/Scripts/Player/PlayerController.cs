@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     private ThirdPersonCamera _camera;
 
+    public int roomId = 0;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();

@@ -8,8 +8,7 @@ public class QuantumController : MonoBehaviour
     private int _maxNumberOfStates = 2;
     [SerializeField]
     private ThirdPersonCamera[] _cameras;
-
-    private PlayerController[] _playerControllers;
+    
     private int _numberOfActiveStates = 1;
     private CameraSelector _cameraSelector;
     // Start is called before the first frame update
@@ -53,6 +52,17 @@ public class QuantumController : MonoBehaviour
         {
             if ((_numberOfActiveStates > 1) && !_cameraSelector.isScreenSelectorEnabled)
             {
+                PlayerController[] playerControllers = FindObjectsOfType<PlayerController>();
+                foreach (PlayerController playerController in playerControllers)
+                {
+                    foreach (PlayerController playerController2 in playerControllers)
+                    {
+                        if (playerController.roomId != playerController2.roomId)
+                        {
+                            return;
+                        }
+                    }
+                }
                 _numberOfActiveStates = 1;
                 _cameraSelector.RemoveDisabledCameras();
             }
