@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float _movementSpeed;
+    private float _movementSpeed = 1.0f;
 
     private Vector3 _input;
     private Rigidbody _rigidbody;
