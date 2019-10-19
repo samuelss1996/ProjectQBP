@@ -120,6 +120,91 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &201020369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 18348073983222801, guid: c9d3fe65e223833408bdce34a34b1ceb,
+    type: 3}
+  m_PrefabInstance: {fileID: 877680896}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &877680896
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 18348073983222801, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148977371932782989, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148977371932782989, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148977371932782989, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148977371932782989, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148977371932782989, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148977371932782989, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148977371932782989, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148977371932782989, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148977371932782989, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148977371932782989, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148977371932782989, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993829445899433096, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: _movementSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809516244121798376, guid: c9d3fe65e223833408bdce34a34b1ceb,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9d3fe65e223833408bdce34a34b1ceb, type: 3}
 --- !u!1 &1815577460
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +216,7 @@ GameObject:
   - component: {fileID: 1815577463}
   - component: {fileID: 1815577462}
   - component: {fileID: 1815577461}
+  - component: {fileID: 1815577464}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -203,6 +289,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1815577464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815577460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ce6aec3a3758e43acb5aac642346fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 201020369}
 --- !u!1 &2028605556
 GameObject:
   m_ObjectHideFlags: 0
