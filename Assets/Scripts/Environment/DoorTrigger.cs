@@ -28,7 +28,7 @@ public class DoorTrigger : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Rigidbody rigidbody = other.GetComponent<Rigidbody>();
-        if (rigidbody && !_oneTimePress)
+        if (rigidbody && (!_oneTimePress || (_oneTimePress && (_doorController.numberOfTriggersActivated < _doorController.numOfTriggers))))
         {
             _doorController.numberOfTriggersActivated = _doorController.numberOfTriggersActivated - 1;
         }

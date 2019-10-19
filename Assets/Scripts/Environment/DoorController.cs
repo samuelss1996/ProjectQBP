@@ -13,7 +13,12 @@ public class DoorController : MonoBehaviour
     private Rigidbody _rigidbody = null;
     private float _height = 0.0f;
     private int _numberOfTriggersActivated = 0;
-    
+
+    public int numOfTriggers
+    {
+        get { return numberOfTriggers; }
+    }
+
     public int numberOfTriggersActivated
     {
         set { _numberOfTriggersActivated = value; }
