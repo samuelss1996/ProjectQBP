@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 703084296}
   - component: {fileID: 703084297}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -673,6 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
+  numberOfTriggers: 1
 --- !u!1001 &877680896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -820,7 +821,7 @@ GameObject:
   - component: {fileID: 1272243588}
   - component: {fileID: 1272243592}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: DoorTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
