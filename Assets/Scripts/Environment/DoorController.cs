@@ -38,14 +38,15 @@ public class DoorController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if ((_numberOfTriggersActivated == numberOfTriggers) && (_rigidbody.position.y < _height))
+        if ((_numberOfTriggersActivated == numberOfTriggers) && (_rigidbody.position.y > -_height))
         {
             _rigidbody.MovePosition(_rigidbody.position + Vector3.up * movementSpeed * Time.fixedDeltaTime);
 
         }
-        else if ((_numberOfTriggersActivated < numberOfTriggers) && (_rigidbody.position.y > _basePosition.y))
+        else if ((_numberOfTriggersActivated < numberOfTriggers) && (_rigidbody.position.y < _basePosition.y))
         {
-            _rigidbody.MovePosition(_rigidbody.position + Vector3.down * movementSpeed * Time.fixedDeltaTime);
+            //_rigidbody.MovePosition(_rigidbody.position + Vector3.down * movementSpeed * Time.fixedDeltaTime);
+            _rigidbody.position = _basePosition;
         }
     }
 }
