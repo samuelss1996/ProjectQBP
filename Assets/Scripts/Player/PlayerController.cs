@@ -11,8 +11,15 @@ public class PlayerController : MonoBehaviour
     private Vector3 _input;
     private Rigidbody _rigidbody;
     private ThirdPersonCamera _camera;
+    private bool _onTrigger = false;
 
     public int roomId = 0;
+
+    public bool onTrigger
+    {
+        get { return _onTrigger; }
+        set { _onTrigger = value; }
+    }
 
     void Start()
     {

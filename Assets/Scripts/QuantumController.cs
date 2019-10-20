@@ -39,21 +39,29 @@ public class QuantumController : MonoBehaviour
         {
             if ((_numberOfActiveStates < _maxNumberOfStates) && !_cameraSelector.isScreenSelectorEnabled)
             {
-                ++_numberOfActiveStates;
-                Vector3 position = main.target.position;
-                main.target.gameObject.SetActive(false);
-                main.gameObject.SetActive(false);
-                _cameraSelector.RemoveCamera(main);
+                PlayerController playerController = main.target.GetComponent<PlayerController>();
+                if (!playerController.onTrigger)
+                {
+                    ++_numberOfActiveStates;
+                    Vector3 position = main.target.position;
+                    main.target.gameObject.SetActive(false);
+                    main.gameObject.SetActive(false);
+                    _cameraSelector.RemoveCamera(main);
 
-                big.target.position = position;
-                big.target.gameObject.SetActive(true);
-                _cameraSelector.AddCamera(big);
-                //big.gameObject.SetActive(true);
-                small.target.position = position;
-                small.target.gameObject.SetActive(true);
-                _cameraSelector.AddCamera(small);
-                //small.gameObject.SetActive(true);
-                _cameraSelector.EnableSelector();
+                    big.target.position = position;
+                    big.target.gameObject.SetActive(true);
+                    big.transform.position = new Vector3(big.transform.position.x, big.target.transform.position.y + big.height, big.target.transform.position.z - big.distance);
+                    big.transform.LookAt(new Vector3(big.transform.position.x, big.target.position.y, big.target.position.z));
+                    _cameraSelector.AddCamera(big);
+                    //big.gameObject.SetActive(true);
+                    small.target.position = position;
+                    small.target.gameObject.SetActive(true);
+                    small.transform.position = new Vector3(small.transform.position.x, small.target.transform.position.y + small.height, small.target.transform.position.z - small.distance);
+                    small.transform.LookAt(new Vector3(small.transform.position.x, small.target.position.y, small.target.position.z));
+                    _cameraSelector.AddCamera(small);
+                    //small.gameObject.SetActive(true);
+                    _cameraSelector.EnableSelector();
+                }
 
                 //foreach (ThirdPersonCamera camera in _cameras)
                 //{

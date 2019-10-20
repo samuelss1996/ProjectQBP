@@ -14465,7 +14465,7 @@ PrefabInstance:
     - target: {fileID: 6693792177020618672, guid: d2b36150e015fe94bb221473d6b20348,
         type: 3}
       propertyPath: _oneTimePress
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4493439087500819897, guid: d2b36150e015fe94bb221473d6b20348,
         type: 3}

@@ -10,7 +10,6 @@ public class DoorTrigger : MonoBehaviour
     private float weightThreshold = 0.6f;
 
     private DoorController _doorController = null;
-    private bool _isUsed = false;
     private Rigidbody _collidingRb = null;
 
     private void Start()
@@ -20,23 +19,31 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Rigidbody rigidbody = other.GetComponent<Rigidbody>();
-        if (!_isUsed && rigidbody && (weightThreshold <= rigidbody.mass))
+        PlayerController playerController = other.GetComponent<PlayerController>();
+        if (playerController)
         {
-            _collidingRb = rigidbody;
+            playerController.onTrigger = true;
+        }
+
+        Rigidbody rigidbody = other.GetComponent<Rigidbody>();
+        if (rigidbody && (weightThreshold <= rigidbody.mass))
+        {
             _doorController.numberOfTriggersActivated = _doorController.numberOfTriggersActivated + 1;
-            _isUsed = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        PlayerController playerController = other.GetComponent<PlayerController>();
+        if (playerController)
+        {
+            playerController.onTrigger = false;
+        }
+
         Rigidbody rigidbody = other.GetComponent<Rigidbody>();
-        if (rigidbody && (rigidbody == _collidingRb) && (!_oneTimePress || (_oneTimePress && (_doorController.numberOfTriggersActivated < _doorController.numOfTriggers))))
+        if (rigidbody && (weightThreshold <= rigidbody.mass) && (!_oneTimePress || (_oneTimePress && (_doorController.numberOfTriggersActivated < _doorController.numOfTriggers))))
         {
             _doorController.numberOfTriggersActivated = _doorController.numberOfTriggersActivated - 1;
-            _collidingRb = null;
-            _isUsed = false;
         }
     }
 }
