@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
         if (!_cameraSelector.isScreenSelectorEnabled && _camera && _camera.gameObject.activeInHierarchy)
         {
             _input = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
