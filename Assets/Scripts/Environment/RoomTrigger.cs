@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RoomTrigger : MonoBehaviour
@@ -56,9 +57,10 @@ public class RoomTrigger : MonoBehaviour
             }
         }
 
-        if(id == 6)
+        if(id == 6 || id == 14)
         {
             GameObject.FindGameObjectWithTag("CameraFade").GetComponent<CameraFadeBehaviour>().FadeToBlack();
+            StartCoroutine(LoadLevel(id == 6? "Level2" : "TheEnd"));
         }
     }
 
@@ -66,5 +68,11 @@ public class RoomTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(4.0f);
         tipPanel.SetActive(false);
+    }
+
+    private IEnumerator LoadLevel(string levelName)
+    {
+        yield return new WaitForSeconds(3.5f);
+        SceneManager.LoadScene(levelName);
     }
 }
