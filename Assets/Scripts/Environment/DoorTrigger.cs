@@ -19,7 +19,7 @@ public class DoorTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerController playerController = other.GetComponent<PlayerController>();
+        PlayerMovement playerController = other.GetComponent<PlayerMovement>();
         if (playerController)
         {
             playerController.onTrigger = true;
@@ -28,13 +28,17 @@ public class DoorTrigger : MonoBehaviour
         Rigidbody rigidbody = other.GetComponent<Rigidbody>();
         if (rigidbody && (weightThreshold <= rigidbody.mass))
         {
+            if (_oneTimePress && _doorController.numberOfTriggersActivated == _doorController.numOfTriggers)
+            {
+                return;
+            }
             _doorController.numberOfTriggersActivated = _doorController.numberOfTriggersActivated + 1;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        PlayerController playerController = other.GetComponent<PlayerController>();
+        PlayerMovement playerController = other.GetComponent<PlayerMovement>();
         if (playerController)
         {
             playerController.onTrigger = false;

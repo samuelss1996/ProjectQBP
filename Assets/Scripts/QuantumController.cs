@@ -39,7 +39,7 @@ public class QuantumController : MonoBehaviour
         {
             if ((_numberOfActiveStates < _maxNumberOfStates) && !_cameraSelector.isScreenSelectorEnabled)
             {
-                PlayerController playerController = main.target.GetComponent<PlayerController>();
+                PlayerMovement playerController = main.target.GetComponent<PlayerMovement>();
                 if (!playerController.onTrigger)
                 {
                     ++_numberOfActiveStates;
@@ -98,10 +98,10 @@ public class QuantumController : MonoBehaviour
         {
             if ((_numberOfActiveStates > 1) && !_cameraSelector.isScreenSelectorEnabled)
             {
-                PlayerController[] playerControllers = FindObjectsOfType<PlayerController>();
-                foreach (PlayerController playerController in playerControllers)
+                PlayerMovement[] playerControllers = FindObjectsOfType<PlayerMovement>();
+                foreach (PlayerMovement playerController in playerControllers)
                 {
-                    foreach (PlayerController playerController2 in playerControllers)
+                    foreach (PlayerMovement playerController2 in playerControllers)
                     {
                         if (playerController.roomId != playerController2.roomId)
                         {

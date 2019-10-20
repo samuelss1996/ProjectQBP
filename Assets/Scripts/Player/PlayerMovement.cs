@@ -38,6 +38,14 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector3 _input;
 
+    private bool _onTrigger = false;
+
+    public bool onTrigger
+    {
+        get { return _onTrigger; }
+        set { _onTrigger = value; }
+    }
+
     public int roomId = 0;
 
     void Awake()
@@ -136,6 +144,10 @@ public class PlayerMovement : MonoBehaviour
                     newDirection = Direction.South;
                 }
             }
+            else
+            {
+                _rigidbody.velocity = Vector3.zero;
+            }
 
             if (newDirection != _direction)
             {
@@ -169,9 +181,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
+        _rigidbody.MoveRotation(Quaternion.Slerp(_prevAngle, FromDirectionToAngle(_direction), Mathf.SmoothStep(0.0f, 1.0f, Mathf.Min(1.0f, _rotationProgress))));
         if (!_cameraSelector.isScreenSelectorEnabled && _camera && _camera.gameObject.activeInHierarchy)
         {
-            _rigidbody.MoveRotation(Quaternion.Slerp(_prevAngle, FromDirectionToAngle(_direction), Mathf.SmoothStep(0.0f, 1.0f, Mathf.Min(1.0f, _rotationProgress))));
             _rigidbody.MovePosition(_rigidbody.position + _input * _movementSpeed * Time.fixedDeltaTime);
         }
     }
