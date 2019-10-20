@@ -27805,6 +27805,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigKokoly (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 951531668734971707, guid: 7141129bd6099be41b2e8e4f19d0fd52,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4282884599730502952, guid: 7141129bd6099be41b2e8e4f19d0fd52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -65881,6 +65886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SmallKokoly (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 951531668734971707, guid: a6411329a592f4b4c94b4c91fdb29834,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4282884599730502952, guid: a6411329a592f4b4c94b4c91fdb29834,
         type: 3}
