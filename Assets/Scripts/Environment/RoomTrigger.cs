@@ -26,7 +26,7 @@ public class RoomTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerController playerController = other.GetComponent<PlayerController>();
+        PlayerMovement playerController = other.GetComponent<PlayerMovement>();
         if (playerController)
         {
             playerController.roomId = id;

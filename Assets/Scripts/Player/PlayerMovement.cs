@@ -38,9 +38,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector3 _input;
 
+    public int roomId = 0;
+
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _cameraSelector = FindObjectOfType<CameraSelector>();
     }
 
     private Quaternion FromDirectionToAngle(Direction direction)
