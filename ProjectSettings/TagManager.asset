@@ -8,6 +8,8 @@ TagManager:
   - BigPlayer
   - SmallPlayer
   - AudioManager
+  - TipText
+  - CameraFade
   layers:
   - Default
   - TransparentFX
