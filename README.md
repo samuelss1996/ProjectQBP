@@ -1,6 +1,7 @@
 CERNHackaton2019
 
 Authors: Adrián Navarro Perez, Christopher Black, Eleni Vatamidou, Ludvig Arlebrink, Marek Cernak, Mohammed Asif Iqbal Mohammed Haneefa, Samuel Soutullo Sobral
+
 Developed during the Quantum Futures Hackathon 2019 at CERN
 
 Everything was developed by the authors except:
