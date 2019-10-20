@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6566448466386304092}
   - component: {fileID: 6566448466386304093}
   - component: {fileID: 6566448466386304081}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RedWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

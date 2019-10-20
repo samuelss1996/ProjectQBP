@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2137586537337037477}
   - component: {fileID: 2137586537337037476}
   - component: {fileID: 2137586537337037480}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MagentaWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

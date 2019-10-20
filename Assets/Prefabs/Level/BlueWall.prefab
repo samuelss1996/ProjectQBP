@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5306901701364299688}
   - component: {fileID: 5306901701364299689}
   - component: {fileID: 5306901701364299685}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BlueWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
