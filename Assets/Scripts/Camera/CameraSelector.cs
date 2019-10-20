@@ -93,6 +93,11 @@ public class CameraSelector : MonoBehaviour
         _cameras.Add(camera);
     }
 
+    public void RemoveCamera(ThirdPersonCamera camera)
+    {
+        _cameras.Remove(camera);
+    }
+
     public bool IsActive(ThirdPersonCamera camera)
     {
         foreach (ThirdPersonCamera activeCamera in _cameras)
@@ -107,13 +112,13 @@ public class CameraSelector : MonoBehaviour
 
     public void RemoveDisabledCameras()
     {
-        foreach (ThirdPersonCamera camera in _cameras)
-        {
-            if (!camera.gameObject.activeInHierarchy)
-            {
-                camera.target.gameObject.SetActive(false);
-            }
-        }
+        //foreach (ThirdPersonCamera camera in _cameras)
+        //{
+        //    if (!camera.gameObject.activeInHierarchy)
+        //    {
+        //        camera.target.gameObject.SetActive(false);
+        //    }
+        //}
         _cameras.RemoveAll(camera => !camera.gameObject.activeInHierarchy);
     }
 
