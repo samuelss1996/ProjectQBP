@@ -8,6 +8,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
     public Transform target;
     public float distance = 5.0f;
+    public float height = 5.0f;
 
     void Start()
     {
@@ -18,7 +19,10 @@ public class ThirdPersonCamera : MonoBehaviour
     {
         if (target && !_cameraSelector.isScreenSelectorEnabled)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, target.transform.position.z - distance);
+            transform.position = new Vector3(transform.position.x, target.transform.position.y + height, target.transform.position.z - distance);
+
+            Vector3 targetLookAt = new Vector3(transform.position.x, target.position.y, target.position.z);
+            transform.LookAt(targetLookAt);
         }
     }
     

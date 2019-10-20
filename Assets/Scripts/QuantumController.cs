@@ -21,13 +21,13 @@ public class QuantumController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < _cameras.Length; i++)
-        {
-            if (i != 0)
-            {
-                _cameras[i].gameObject.SetActive(false);
-            }
-        }
+        //for (int i = 0; i < _cameras.Length; i++)
+        //{
+        //    if (i != 0)
+        //    {
+        //        _cameras[i].gameObject.SetActive(false);
+        //    }
+        //}
         _cameraSelector = FindObjectOfType<CameraSelector>();
     }
 

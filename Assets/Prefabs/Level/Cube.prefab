@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 755699708570639569}
   - component: {fileID: 755699708570639568}
   - component: {fileID: 755699708570639572}
+  - component: {fileID: 4390693690511383032}
   m_Layer: 8
-  m_Name: Cube (1)
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,3 +109,15 @@ MonoBehaviour:
   animationSpeed: 0.5
   colorOne: {r: 0.117351085, g: 0.5754717, b: 0, a: 1}
   colorTwo: {r: 0.20392156, g: 1, b: 0, a: 1}
+--- !u!114 &4390693690511383032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755699708570639583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb46a1c06db543740a274ac065cfc877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
