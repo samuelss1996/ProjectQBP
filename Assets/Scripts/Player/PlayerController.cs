@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
             ThirdPersonCamera[] cameras = FindObjectsOfType<ThirdPersonCamera>();
             foreach (ThirdPersonCamera camera in cameras)
             {
-                if (camera.target == gameObject.transform)
+                if (camera.target.gameObject == gameObject)
                 {
                     _camera = camera;
                     break;
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_cameraSelector.isScreenSelectorEnabled)
+        if (!_cameraSelector.isScreenSelectorEnabled && _camera && _camera.gameObject.activeInHierarchy)
         {
             _rigidbody.MovePosition(_rigidbody.position + _input * _movementSpeed * Time.fixedDeltaTime);
         }
